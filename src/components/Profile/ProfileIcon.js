@@ -8,7 +8,7 @@ import {
 
 import './ProfileIcon.css';
 
-const ProfileIcon = (props) => {
+const ProfileIcon = ({ toggleModal, onRouteChange }) => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -32,8 +32,8 @@ const ProfileIcon = (props) => {
         <DropdownMenu right className="b--transparent shadow-5" style={{
           backgroundColor: "rgba(255, 255, 255, 0.6)"
         }}>
-          <DropdownItem>View Profile</DropdownItem>
-          <DropdownItem onClick={() => props.onRouteChange('signout')}>Sign Out</DropdownItem>
+          <DropdownItem onClick={toggleModal}>View Profile</DropdownItem>
+          <DropdownItem onClick={() => onRouteChange('signout')}>Sign Out</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div >
